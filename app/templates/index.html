@@ -10,7 +10,7 @@
   <h3>Your passwords are here {{username}}: </h3>
   <ul>
       {% for item in passwords_data%}
-          {{ macros.render_passwords(item["description"], passwords_decripted[item["id"]-1], item["id"])}}
+          {{ macros.render_passwords(item["description"], passwords_decripted[loop.index0], item["id"])}}
       {% endfor %}
   </ul>
   <button class="button" id="create-pass" onclick="newPass()">Create New Password</button>

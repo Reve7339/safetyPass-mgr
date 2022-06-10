@@ -1,19 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SafetyPass</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body class="no-margin">
-    <header>
-      <div class="head">
-        <h1 class="text no-margin">SafetyPass</h1>
-        <p class="text">The simplest way to manage your passwords</p>
-      </div>
-    </header>
+{% extends 'base.html' %}
+{% import 'macros.html' as macros %}
 
-  </body>
-</html>
+{% block title %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="password-box">
+  <h3>Your passwords are here {{username}}: </h3>
+  <ul>
+      {% for item in passwords_data%}
+          {{ macros.render_passwords(item["description"], passwords_decripted[item["id"]-1], item["id"])}}
+      {% endfor %}
+  </ul>
+  <button class="button" id="create-pass" onclick="newPass()">Create New Password</button>
+</div>
+<div class="hide-form" id="form">
+  <form class="form" method="post">
+    <input type="text" name="description" id="description" required placeholder="Type the description of the password">
+    <div class="characters_lenth">
+      <label for="number">Number of characters:</label>
+      <input type="number" name="length_pass" id="length_pass" required>
+    </div>
+</div>
+  <div id="button">
+    <input class="button" type="submit" name="submit" id="Crear">
+  </form>
+  <button class="button" onclick="closePass()">Cancelar</button>
+  </div>
+  <div>
+    <a id="logout" href="{{url_for('auth.logout')}}"><input class="button" type="button" value="Logout"></a>
+  </div>
+
+
+<script src="{{url_for('static', filename='scripts.js')}}"></script>
+{% endblock %}
+

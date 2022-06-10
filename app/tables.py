@@ -14,5 +14,7 @@ class Passwords(db.Model):
     __tablename__ = 'passwords'
 
     id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.Text, nullable=False)
     password_hash = db.Column(db.Text, nullable=False)
+    fernet_key = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)

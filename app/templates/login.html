@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ super() }} | login
+{% endblock %}
+
+{% block content %}
+
+<form method="post" autocomplete="on">
+    <div class="form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    <label for="button">Show Password</label>
+    <input type="checkbox" onclick="togglePass()">
+    </div>
+    <div>
+      <input class="button" type="submit" name="submit" id="submit" value="Ingresar">
+      <a id="registrar" href="{{url_for('auth.signup')}}"><input class="button" type="button" value="Resgistrar"></a>
+    </div>
+  </form>
+<script src="{{url_for('static', filename='scripts.js')}}"></script>
+
+{% endblock %}
+

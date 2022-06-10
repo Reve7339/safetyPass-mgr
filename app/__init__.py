@@ -1,5 +1,4 @@
 from flask import Flask
-from flask_bootstrap import Bootstrap5
 from .config import Config
 from .auth import auth
 from flask_sqlalchemy import SQLAlchemy
@@ -18,7 +17,6 @@ def create_app():
 
     app = Flask(__name__)
     app.config.from_object(Config)
-    Bootstrap5(app)
     login_manager.init_app(app)
     app.register_blueprint(auth)
     SQLAlchemy(app)

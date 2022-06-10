@@ -1,0 +1,13 @@
+{% macro render_passwords(description, password, id) %}
+<div class="passwords">
+    <div class="password-cell">
+        <p>{{description}}: </p>
+        <input type="password" id="{{id}}" value="{{password}}">
+    </div>
+    <div id="toggle_passwords_hash">
+        <label for="button">Show Password</label>
+        <input type="checkbox" onclick="togglePassUser('{{id}}')">
+    </div>
+
+</div>
+{% endmacro %}

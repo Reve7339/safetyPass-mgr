@@ -1,13 +1,125 @@
-.no-margin {
-    margin: 0px;
-
-}
-
-.head {
-    background-color: #BDF2D5;
-}
-
-.text {
+body {
+    margin-top: 50px;
     text-align: center;
-    color: #4B5D67;
+    color: #BDF2D5;
+    background-color: #4B5D67;
+}
+
+h1 {
+    color: #BDF2D5;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.hide-form {
+    margin: 60px 0 0 0;
+    display: none;
+}
+
+.password-box {
+    border-radius: 10px;
+    border: solid;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 20px 30px;
+    width: 25%;
+}
+
+.password-box label {
+    display: block;
+}
+
+.password-box input{
+    border: none;
+    padding: 4px 12px;
+    border-radius: 7px;
+    width: 230px;
+}
+
+.form {
+    margin-top: 40px;
+}
+
+
+
+.form input{
+    padding: 4px 8px;
+    margin: 5px auto 23px;
+    display: block;
+    border: none;
+    border-radius: 10px;
+}
+
+.button {
+    width: 85px;
+    margin: 10px;
+    position: relative;
+    display: inline;
+    background-color: #FF06B7;
+    color: #BDF2D5;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    padding: 8px 10px;
+}
+
+.button create-pass {
+    width: 150;
+}
+
+.passwords {
+    display: inline;
+}
+
+.characters_lenth label {
+    display: inline;
+    margin-right: 15px;
+}
+
+.characters_lenth input {
+    border: none;
+    display: inline;
+    padding: 6px;
+    width: 50px;
+}
+
+.password-cell {
+    text-align: left;
+}
+
+.password-cell p {
+    margin-bottom: 3px;
+}
+
+#toggle_passwords_hash input{
+    display: inline;
+    position: relative;
+    top: 1px;
+    right: 110px;
+}
+
+#toggle_passwords_hash label{
+    display: inline;
+}
+
+#toggle_passwords_hash {
+    margin: 4px 0 10px 0;
+    text-align: left;
+}
+
+#button {
+    margin: 18px 0 0 0;
+    display: none;
+}
+
+#form {
+    display: none;
+}
+
+#create-pass {
+    width: 180px;
 }

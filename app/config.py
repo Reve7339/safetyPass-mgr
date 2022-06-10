@@ -1,5 +1,9 @@
+import secrets
+
+secretkey = secrets.token_hex(16)
+
 class Config:
-    SECRET_KEY = 'SUPER SECRETO'
+    SECRET_KEY = secretkey
     SERVER_NAME = '127.0.0.1:8080'
     DEBUG = True
     ENV = 'development'

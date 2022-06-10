@@ -1,4 +1,5 @@
-from app.tables import db, User
+from ast import Pass
+from app.tables import db, User, Passwords
 
 
 def get_user(username):
@@ -13,5 +14,17 @@ def register_user(UserData):
     db.session.add(user)
     db.session.commit()
 
-def get_passwords():
-    pass
+def register_password(username, description, password_hash, key):
+    user_id = get_user(username)
+    password = Passwords(
+        description = description,
+        password_hash = password_hash,
+        user_id = user_id.id,
+        fernet_key = key
+    )
+    db.session.add(password)
+    db.session.commit()
+
+def get_passwords(user_id):
+    passwords = Passwords.query.filter_by(user_id=user_id).all()
+    return passwords

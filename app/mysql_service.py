@@ -1,9 +1,9 @@
-from ast import Pass
 from app.tables import db, User, Passwords
 
 
 def get_user(username):
     user = User.query.filter_by(username=username).first()
+    db.session.close()
     return user
 
 def register_user(UserData):
@@ -13,6 +13,7 @@ def register_user(UserData):
                 last_name = UserData.last_name)
     db.session.add(user)
     db.session.commit()
+    db.session.close()
 
 def register_password(username, description, password_hash, key):
     user_id = get_user(username)
@@ -24,7 +25,9 @@ def register_password(username, description, password_hash, key):
     )
     db.session.add(password)
     db.session.commit()
+    db.session.close()
 
 def get_passwords(user_id):
     passwords = Passwords.query.filter_by(user_id=user_id).all()
+    db.session.close()
     return passwords

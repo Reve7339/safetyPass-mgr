@@ -1,10 +1,4 @@
-import os
 import secrets
-
-mysqldb = os.environ.get("MYSQL_URL")
-
-if mysqldb is None:
-    mysqldb = '127.0.0.1:33060'
 
 secretkey = secrets.token_hex(16)
 
@@ -13,5 +7,5 @@ class Config:
     SERVER_NAME = '127.0.0.1:8080'
     DEBUG = True
     ENV = 'development'
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:secret@172.20.0.2:3306/python-flask'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:secret@127.0.0.1:33060/python-flask'
     SQLALCHEMY_TRACK_MODIFICATIONS = False

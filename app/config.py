@@ -13,5 +13,5 @@ class Config:
     SERVER_NAME = '127.0.0.1:8080'
     DEBUG = True
     ENV = 'development'
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:secret@{mysqldb}/python-flask'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:secret@172.20.0.2/python-flask'
     SQLALCHEMY_TRACK_MODIFICATIONS = False

@@ -1,7 +1,7 @@
 import os
 import secrets
 
-mysqldb = os.environ.get("MYSQSL_URL")
+mysqldb = os.environ.get("MYSQL_URL")
 
 if mysqldb is None:
     mysqldb = '127.0.0.1:33060'
